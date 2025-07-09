@@ -1,0 +1,34 @@
+<!-- src/main/resources/static/index.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Meteo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Importa Chart.js per i grafici -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature dell'Ultima Settimana</h1>
+        <p>Seleziona una città e clicca il pulsante per visualizzare le temperature medie giornaliere dell'ultima settimana.</p>
+
+        <div class="city-selection">
+            <label for="citySelect">Seleziona Città:</label>
+            <select id="citySelect" class="select-dropdown">
+                <!-- Le opzioni verranno caricate dinamicamente da JavaScript -->
+            </select>
+        </div>
+
+        <button id="fetchWeatherBtn" class="button">Mostra Grafico Meteo</button>
+        <div class="chart-container">
+            <h2 id="cityNameDisplay"></h2>
+            <canvas id="temperatureChart"></canvas>
+            <p id="loadingMessage" class="hidden">Caricamento dati...</p>
+            <p id="errorMessage" class="hidden error-message">Si è verificato un errore durante il recupero dei dati.</p>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
