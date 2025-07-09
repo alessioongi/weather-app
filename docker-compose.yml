@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3.8' # Specifica la versione del formato Compose
+
+services:
+  weather-app: # Nome del servizio per la tua applicazione meteo
+    build:
+      context: . # Indica a Docker Compose di cercare il Dockerfile nella directory corrente
+      dockerfile: Dockerfile # Specifica il nome del Dockerfile da usare (assicurati che sia 'Dockerfile' con la D maiuscola)
+    ports:
+      - "8080:8080" # Mappa la porta 8080 dell'host alla porta 8080 del container
+    container_name: weather-app-container # Un nome opzionale per il container generato
+    restart: unless-stopped # Riavvia il container automaticamente a meno che non venga fermato manualmente
