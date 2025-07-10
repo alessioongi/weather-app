@@ -57,6 +57,9 @@ Clona il repository:
 
 ```
 git clone https://github.com/alessioongi/weather-app.git
+```
+spostati nella caretella del progetto 
+```
 cd weather-app
 ```
 
@@ -87,6 +90,9 @@ Clona il repository:
 
 ```
 git clone https://github.com/alessioongi/weather-app.git
+```
+spostati nella cartella progetto
+```
 cd weather-app
 ```
 
