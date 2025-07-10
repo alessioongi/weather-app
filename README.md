@@ -38,6 +38,10 @@ Docker
 
 Dockerfile (con build multi-stage per compilazione e runtime)
 
+
+
+
+
 ⚙️ Come Iniziare (Getting Started)
 Per avviare l'applicazione, puoi scegliere tra l'esecuzione locale (se hai Java e Maven installati) o l'esecuzione tramite Docker (raccomandato per la portabilità).
 
@@ -90,6 +94,8 @@ Naviga a http://localhost:8080
 oppure avvia da docker dekstop dope sono presenti i numeri delle porte Es 8080:8080
 
 si spera che funzioni !
+
+
 
 
 
