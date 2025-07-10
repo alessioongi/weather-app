@@ -55,42 +55,63 @@ Docker Desktop (per esecuzione con Docker)
 1. Esecuzione Locale (senza Docker)
 Clona il repository:
 
-```git clone https://github.com/alessioongi/weather-app.git
-cd weather-app```
+```
+git clone https://github.com/alessioongi/weather-app.git
+cd weather-app
+```
 
 Compila il progetto con Maven:
 
----./mvnw.cmd clean install -DskipTests---
+```
+./mvnw.cmd clean install -DskipTests
+```
 
 (Su Linux/macOS, potresti usare ./mvnw clean install -DskipTests)
 
 Esegui l'applicazione Spring Boot:
 
----java -jar target/weather-app-0.0.1-SNAPSHOT.jar---
+```
+java -jar target/weather-app-0.0.1-SNAPSHOT.jar
+```
 
 Apri nel browser:
-Naviga a ---http://localhost:8080---
+Naviga a 
+```
+http://localhost:8080
+```
 
 2. Esecuzione con Docker (Raccomandato)
 Questo metodo costruisce l'applicazione Java all'interno del container Docker, quindi non è necessario avere Java o Maven installati localmente (solo Docker Desktop).
 
 Clona il repository:
 
----git clone https://github.com/alessioongi/weather-app.git
-cd weather-app---
+```
+git clone https://github.com/alessioongi/weather-app.git
+cd weather-app
+```
 
 Costruisci l'immagine Docker:
 Questo comando leggerà il Dockerfile e compilerà l'applicazione Java al suo interno.
 
----docker build -t weather-app .---
+```
+docker build -t weather-app .
+```
 
 Esegui il container Docker:
 
----docker run -p 8080:8080 weather-app---
+```
+docker run -p 8080:8080 weather-app
+```
 
 Apri nel browser:
-Naviga a ---http://localhost:8080---
-oppure avvialo da docker dekstop dove sono presenti i numeri delle porte Es ---8080:8080--
+Naviga a 
+```
+http://localhost:8080
+```
+oppure avvialo da docker dekstop dove sono presenti i numeri delle porte Es 
+```
+8080:8080
+```
 
 si spera che funzioni !
 
