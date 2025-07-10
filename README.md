@@ -1,51 +1,44 @@
-Documentazione Progetto: App Meteo
-Questo documento fornisce una panoramica completa del progetto "App Meteo", che recupera e visualizza le temperature medie giornaliere per diverse città italiane.
+☁️ App Meteo 🇮🇹
+Un'applicazione web semplice e responsiva che recupera e visualizza le temperature medie giornaliere dell'ultima settimana per diverse città italiane, utilizzando un backend Spring Boot e un frontend JavaScript con Chart.js.
 
-1. Panoramica del Progetto
-L'App Meteo è un'applicazione web semplice che consente agli utenti di visualizzare le temperature medie giornaliere dell'ultima settimana per una città selezionata. Il backend è sviluppato con Spring Boot (Java) e si interfaccia con l'API Open-Meteo per recuperare i dati meteorologici. Il frontend è una semplice pagina HTML con JavaScript per la logica e Chart.js per la visualizzazione dei dati in un grafico a barre.
+✨ Caratteristiche
+Backend RESTful: Sviluppato con Spring Boot per fornire dati meteo.
 
-Caratteristiche principali:
-Backend RESTful con Spring Boot.
+Integrazione API Esterna: Recupera dati meteorologici dall'API Open-Meteo.
 
-Integrazione con l'API esterna Open-Meteo.
+Frontend Interattivo: Pagina web dinamica con HTML, CSS e JavaScript.
 
-Frontend basato su HTML, CSS e JavaScript.
+Visualizzazione Grafica: Mostra le temperature medie giornaliere in un grafico a barre intuitivo (Chart.js).
 
-Visualizzazione dei dati tramite grafico Chart.js.
+Selezione Città: Permette all'utente di scegliere una città italiana da un dropdown.
 
-Selezione della città tramite dropdown.
+Containerizzazione Docker: Facile da costruire e deployare utilizzando Docker, garantendo portabilità.
 
-Supporto Docker per un deployment facile e portatile.
+🚀 Tecnologie Utilizzate
+Backend
+Java 17
 
-2. Tecnologie Utilizzate
-Backend:
-Java 17: Linguaggio di programmazione.
+Spring Boot
 
-Spring Boot: Framework per lo sviluppo rapido di applicazioni Java.
+Maven
 
-Maven: Strumento di gestione del progetto e di build.
+RestTemplate (per chiamate API)
 
-RestTemplate: Client HTTP di Spring per chiamate API REST.
+Frontend
+HTML5
 
-Jackson (integrato in Spring Boot): Libreria per la serializzazione/deserializzazione JSON.
+CSS3
 
-Frontend:
-HTML5: Struttura della pagina web.
+JavaScript (ES6+)
 
-CSS3: Stile e layout responsivo.
+Chart.js
 
-JavaScript (ES6+): Logica interattiva della pagina.
+Deployment
+Docker
 
-Chart.js: Libreria JavaScript per la creazione di grafici.
+Dockerfile (con build multi-stage per compilazione e runtime)
 
-Deployment/Containerizzazione:
-Docker: Piattaforma per containerizzare l'applicazione.
-
-Dockerfile: File per definire l'immagine Docker.
-
-(Opzionale) Docker Compose: Strumento per definire ed eseguire applicazioni Docker multi-container (non utilizzato nella versione attuale del Dockerfile, ma utile per futuri sviluppi).
-
-3. Struttura del Progetto
+📦 Struttura del Progetto
 Il progetto segue una struttura standard Maven e Spring Boot:
 
 weatherapp/
@@ -55,65 +48,60 @@ weatherapp/
 │   │   │   └── com/
 │   │   │       └── example/
 │   │   │           └── weatherapp/
-│   │   │               ├── WeatherApplication.java       # Classe principale Spring Boot
-│   │   │               ├── controller/
-│   │   │               │   └── WeatherController.java    # Controller REST
-│   │   │               ├── model/
-│   │   │               │   ├── City.java                 # Modello per la città
-│   │   │               │   ├── DailyData.java            # Modello dati giornalieri API
-│   │   │               │   ├── OpenMeteoResponse.java    # Modello risposta API
-│   │   │               │   └── TemperatureData.java      # Modello dati per frontend
-│   │   │               └── service/
-│   │   │                   └── OpenMeteoService.java     # Servizio per logica API
+│   │   │               ├── ... (classi Java di controller, service, model)
 │   │   └── resources/
-│   │       ├── static/                                   # File statici del frontend
+│   │       ├── static/
 │   │       │   ├── index.html
 │   │       │   ├── style.css
 │   │       │   └── script.js
-│   │       └── application.properties                  # Proprietà di configurazione Spring Boot
-│   └── test/
-│       └── java/
-│           └── com/
-│               └── example/
-│                   └── weatherapp/
-│                       └── ... (test unitari)
-├── pom.xml                                           # File di configurazione Maven
-├── Dockerfile                                        # Definizione dell'immagine Docker
-├── docker-compose.yml (opzionale)                    # Configurazione Docker Compose
-└── .gitignore                                        # File e cartelle da ignorare per Git
+│   │       └── application.properties
+├── pom.xml
+├── Dockerfile
+└── .gitignore
 
-4. Come Eseguire l'Applicazione
-Puoi eseguire l'applicazione in due modi: direttamente sul tuo computer o tramite Docker.
+⚙️ Come Iniziare (Getting Started)
+Per avviare l'applicazione, puoi scegliere tra l'esecuzione locale (se hai Java e Maven installati) o l'esecuzione tramite Docker (raccomandato per la portabilità).
 
-4.1 Esecuzione Locale (senza Docker)
-Assicurati di avere Java 17 e Maven installati.
+Prerequisiti
+Java 17 (per esecuzione locale)
 
-Naviga nella directory radice del progetto:
+Maven (per esecuzione locale)
 
-cd /percorso/alla/tua/cartella/weatherapp
+Docker Desktop (per esecuzione con Docker)
 
-Compila il progetto:
+1. Esecuzione Locale (senza Docker)
+Clona il repository:
+
+git clone https://github.com/IL_TUO_USERNAME/weather-app.git
+cd weather-app
+
+(Sostituisci IL_TUO_USERNAME con il tuo username GitHub)
+
+Compila il progetto con Maven:
 
 ./mvnw.cmd clean install -DskipTests
 
 (Su Linux/macOS, potresti usare ./mvnw clean install -DskipTests)
 
-Esegui l'applicazione:
+Esegui l'applicazione Spring Boot:
 
 java -jar target/weather-app-0.0.1-SNAPSHOT.jar
 
-Accedi all'applicazione:
-Apri il tuo browser e vai a http://localhost:8080.
+Apri nel browser:
+Naviga a http://localhost:8080
 
-4.2 Esecuzione con Docker
-Assicurati di avere Docker Desktop installato e in esecuzione. Questo metodo è raccomandato per la portabilità.
+2. Esecuzione con Docker (Raccomandato)
+Questo metodo costruisce l'applicazione Java all'interno del container Docker, quindi non è necessario avere Java o Maven installati localmente (solo Docker Desktop).
 
-Naviga nella directory radice del progetto:
+Clona il repository:
 
-cd /percorso/alla/tua/cartella/weatherapp
+git clone https://github.com/IL_TUO_USERNAME/weather-app.git
+cd weather-app
+
+(Sostituisci IL_TUO_USERNAME con il tuo username GitHub)
 
 Costruisci l'immagine Docker:
-Questo comando leggerà il Dockerfile e compilerà l'applicazione Java all'interno del container di build, creando il JAR e poi l'immagine finale.
+Questo comando leggerà il Dockerfile e compilerà l'applicazione Java al suo interno.
 
 docker build -t weather-app .
 
@@ -121,48 +109,24 @@ Esegui il container Docker:
 
 docker run -p 8080:8080 weather-app
 
-Accedi all'applicazione:
-Apri il tuo browser e vai a http://localhost:8080.
+Apri nel browser:
+Naviga a http://localhost:8080
 
-5. Endpoint API (Backend)
-Il backend Spring Boot espone i seguenti endpoint:
+🔌 Endpoint API
+Il backend Spring Boot espone i seguenti endpoint REST:
 
-GET /api/cities:
+GET /api/cities
 
-Descrizione: Restituisce un elenco di tutte le città italiane disponibili per la selezione.
+Restituisce un array JSON di oggetti City (nome, latitudine, longitudine) di città italiane disponibili.
 
-Risposta: List<City> (JSON array di oggetti City con name, latitude, longitude).
+GET /api/weather?city={cityName}
 
-GET /api/weather?city={cityName}:
+Parametri: city (stringa, nome della città, es. "Roma").
 
-Descrizione: Recupera i dati di temperatura media giornaliera per l'ultima settimana per la città specificata.
+Restituisce un oggetto JSON TemperatureData contenente labels (date), values (temperature medie in °C) e cityName.
 
-Parametri di query:
+🤝 Contribuire
+Sentiti libero di aprire issue o inviare pull request per migliorare questo progetto.
 
-city (String, obbligatorio): Il nome della città (es. "Roma", "Milano").
-
-Risposta: TemperatureData (JSON oggetto con labels (date), values (temperature), cityName).
-
-6. Frontend
-Il frontend è una Single Page Application (SPA) che interagisce con il backend.
-
-index.html: La struttura principale della pagina. Include un dropdown per la selezione della città e un'area per il grafico.
-
-style.css: Definisce lo stile visivo dell'applicazione, inclusa la responsività.
-
-script.js:
-
-Al caricamento della pagina, effettua una chiamata a /api/cities per popolare il dropdown delle città.
-
-Quando l'utente seleziona una città e clicca sul pulsante "Mostra Grafico Meteo", effettua una chiamata a /api/weather?city={selectedCityName}.
-
-Utilizza Chart.js per disegnare un grafico a barre delle temperature medie giornaliere.
-
-Gestisce lo stato di caricamento e visualizza eventuali messaggi di errore.
-
-7. Integrazione con GitHub
-Il progetto è progettato per essere gestito con Git e ospitato su GitHub.
-
-Il file .gitignore è configurato per escludere i file generati (come la directory target/ e i file .jar) dal controllo di versione. Questo assicura che il repository contenga solo il codice sorgente e i file di configurazione essenziali.
-
-Chiunque cloni il repository può utilizzare il Dockerfile per costruire l'applicazione da zero, senza dover pre-compilare il codice Java localmente.
+📄 Licenza
+Questo progetto è rilasciato sotto licenza MIT. Vedi il file LICENSE per maggiori dettagli.
