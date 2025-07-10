@@ -38,27 +38,6 @@ Docker
 
 Dockerfile (con build multi-stage per compilazione e runtime)
 
-📦 Struttura del Progetto
-Il progetto segue una struttura standard Maven e Spring Boot:
-
-weatherapp/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── example/
-│   │   │           └── weatherapp/
-│   │   │               ├── ... (classi Java di controller, service, model)
-│   │   └── resources/
-│   │       ├── static/
-│   │       │   ├── index.html
-│   │       │   ├── style.css
-│   │       │   └── script.js
-│   │       └── application.properties
-├── pom.xml
-├── Dockerfile
-└── .gitignore
-
 ⚙️ Come Iniziare (Getting Started)
 Per avviare l'applicazione, puoi scegliere tra l'esecuzione locale (se hai Java e Maven installati) o l'esecuzione tramite Docker (raccomandato per la portabilità).
 
@@ -72,10 +51,8 @@ Docker Desktop (per esecuzione con Docker)
 1. Esecuzione Locale (senza Docker)
 Clona il repository:
 
-git clone https://github.com/IL_TUO_USERNAME/weather-app.git
+git clone https://github.com/alessioongi/weather-app.git
 cd weather-app
-
-(Sostituisci IL_TUO_USERNAME con il tuo username GitHub)
 
 Compila il progetto con Maven:
 
@@ -95,10 +72,8 @@ Questo metodo costruisce l'applicazione Java all'interno del container Docker, q
 
 Clona il repository:
 
-git clone https://github.com/IL_TUO_USERNAME/weather-app.git
+git clone https://github.com/alessioongi/weather-app.git
 cd weather-app
-
-(Sostituisci IL_TUO_USERNAME con il tuo username GitHub)
 
 Costruisci l'immagine Docker:
 Questo comando leggerà il Dockerfile e compilerà l'applicazione Java al suo interno.
@@ -111,6 +86,12 @@ docker run -p 8080:8080 weather-app
 
 Apri nel browser:
 Naviga a http://localhost:8080
+
+oppure avvia da docker dekstop dope sono presenti i numeri delle porte Es 8080:8080
+
+si spera che funzioni !
+
+
 
 🔌 Endpoint API
 Il backend Spring Boot espone i seguenti endpoint REST:
