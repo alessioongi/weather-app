@@ -35,7 +35,7 @@ WORKDIR /app
 # Copia il file JAR compilato dallo stage di build (chiamato 'build') al container di runtime.
 # Assicurati che il nome del JAR qui corrisponda a quello generato dal tuo pom.xml.
 # Per default, è artifactId-version.jar (es. weather-app-0.0.1-SNAPSHOT.jar).
-COPY --from=build /app/target/weather-app-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/weather-app-0.0.1-SNAPSHOT.jar app.jar
 
 # Espone la porta su cui l'applicazione Spring Boot sarà in ascolto.
 EXPOSE 8080
