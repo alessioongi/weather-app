@@ -55,8 +55,8 @@ Docker Desktop (per esecuzione con Docker)
 1. Esecuzione Locale (senza Docker)
 Clona il repository:
 
----git clone https://github.com/alessioongi/weather-app.git
-cd weather-app---
+```git clone https://github.com/alessioongi/weather-app.git
+cd weather-app```
 
 Compila il progetto con Maven:
 
